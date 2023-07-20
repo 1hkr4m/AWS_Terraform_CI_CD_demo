@@ -13,14 +13,11 @@ jobs:
       run:
         working-directory: src
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.1
-          terraform_wrapper: false
+        uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Format
         id: fmt
